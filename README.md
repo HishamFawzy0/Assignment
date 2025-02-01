@@ -88,12 +88,6 @@ onRowSelect(row: any) {
 
 ---
 
-## 📸 Screenshot (Example UI)
-
-🚀 *(Add a screenshot of your table UI here if possible)* 🚀
-
----
-
 ## 🛠️ How to Use
 
 ### 1️⃣ Install Dependencies
