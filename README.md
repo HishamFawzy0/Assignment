@@ -1,59 +1,140 @@
-# AngularBasicProject
+# 📌 Assignment - Angular Table Component
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+## 📖 Overview
 
-## Development server
+This project is an **Angular-based dynamic table component** designed to efficiently display and interact with tabular data. It includes features such as:
 
-To start a local development server, run:
+✅ **Dynamic Data Binding** using `@Input`  
+✅ **Event Handling** using `@Output`, `EventEmitter` and `Services`
+✅ **Customizable Column Headers**  
+✅ **Row Selection Feature**  
+✅ **Responsive Design**  
 
-```bash
+The table component is fully reusable and can be easily integrated into any Angular application by dynamically passing data.
+
+---
+
+## 🛠️ Technologies Used
+
+- **Angular** - Frontend framework  
+- **TypeScript** - Strongly typed JavaScript  
+- **Bootstrap** *(if used for styling)*  
+
+---
+
+## ⚙️ Features & Functionality
+
+### 1️⃣ Passing Data to the Table (`@Input`)
+
+The table component receives data dynamically from the parent component using `@Input` properties.
+
+```typescript
+@Input() tableData: any[] = []; // Holds the data to be displayed
+@Input() tableHeaders: string[] = []; // Defines the column headers
+```
+
+#### Example Usage in Parent Component:
+
+```html
+<app-table [tableData]="users" [tableHeaders]="['Name', 'Email']"></app-table>
+```
+
+```typescript
+users = [
+  { name: 'Hisham', email: 'hisham@example.com' },
+  { name: 'Momo', email: 'momo@example.com' }
+];
+```
+
+---
+
+### 2️⃣ Emitting Events (`@Output` & `EventEmitter`)
+
+The component uses `@Output` and `EventEmitter` to send data back to the parent component when a row is selected.
+
+```typescript
+@Output() rowSelected = new EventEmitter<any>();
+
+selectRow(row: any) {
+  this.rowSelected.emit(row);
+}
+```
+
+#### Handling Row Selection in Parent Component:
+
+```html
+<app-table [tableData]="users" [tableHeaders]="['Name', 'Email']" (rowSelected)="onRowSelect($event)"></app-table>
+```
+
+```typescript
+onRowSelect(row: any) {
+  console.log('Selected Row:', row);
+}
+```
+
+---
+
+## 🏗️ Component Structure
+
+```
+📂 src/app
+ ┣ 📂 components
+ ┃ ┗ 📂 table
+ ┃ ┃ ┣ 📜 table.component.ts  → Main logic
+ ┃ ┃ ┣ 📜 table.component.html → Template (UI)
+ ┃ ┃ ┣ 📜 table.component.scss → Styling
+ ┃ ┃ ┗ 📜 table.component.spec.ts → Unit tests
+```
+
+---
+
+## 📸 Screenshot (Example UI)
+
+🚀 *(Add a screenshot of your table UI here if possible)* 🚀
+
+---
+
+## 🛠️ How to Use
+
+### 1️⃣ Install Dependencies
+
+Run the following command to install the required dependencies:
+
+```sh
+npm install
+```
+
+### 2️⃣ Run the Project
+
+```sh
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 3️⃣ Open in Browser
 
-## Code scaffolding
+Navigate to `http://localhost:4200/` to see the app in action.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+---
 
-```bash
-ng generate component component-name
-```
+## 🛡️ Future Enhancements
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- ✅ Add Sorting Functionality  
+- ✅ Implement Pagination  
+- ✅ Add Filtering & Search  
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## 🤝 Contributing
 
-To build the project run:
+Feel free to contribute by submitting issues or pull requests.
 
-```bash
-ng build
-```
+---
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📜 License
 
-## Running unit tests
+This project is **MIT licensed**.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+---
 
-```bash
-ng test
-```
+🚀 **Happy Coding!** 😎
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
