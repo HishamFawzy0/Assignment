@@ -1,0 +1,31 @@
+.number{
+    font-family: "Neo Sans Arabic";
+    font-weight: 600;
+    line-height: 21px;
+    font-size: 14px;
+    color: #1C1C28;
+    
+}
+
+.cursor button{
+     background-color: #E9ECEF;
+    border: none;
+}
+
+.cursor button:hover{
+    background-color: 
+    #d4d4d4 ;
+    transition: all 0.2s;
+}
+
+.cursor button:focus{
+    color: red;
+    transition: all 0.2s;
+}
+
+.hiddenElement{
+    transform: translateY(-100%);
+    transition: all 0.5s;
+}
+
+

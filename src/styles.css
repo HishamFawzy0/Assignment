@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: "Neo Sans Arabic"; /* اسم الخط اللي هتستخدمه */
+    src: url("/fonts/alfont_com_NeoSansArabic.ttf") ; /* مكان الخط */
+    
+}
+body{
+    background-color:#f8f7f8;
+}

@@ -1,0 +1,33 @@
+.footer img{
+    width: 50px;
+    height: 50px;
+    margin-top: 5px;
+}
+
+.Head-Line{
+    font-family: 'Neo Sans Arabic';
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.35px;
+    color: #6B7280;
+}
+
+.Sup-Line{
+    font-family: 'Neo Sans Arabic';
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 15.55px;
+
+    margin-top: -10px;
+
+}
+.circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #E8E8E8;
+    margin-top: -25px;
+
+    
+}

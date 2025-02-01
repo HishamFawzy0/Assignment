@@ -1,0 +1,53 @@
+<section class="bg-white shadow-sm p-3 rounded-3 my-3">
+    
+    <table class="w-100 table-responsive">
+        <thead class="custom-head  ">
+            <tr class="rounded-3" >
+                <th scope="col">العميل</th>
+                <th scope="col">تاريخ التعيين</th>
+                <th scope="col">تاريخ إلغاء التعيين</th>
+                <th scope="col">المسؤول عن التعيين</th>
+                <th scope="col">الدقائق المحلية</th>
+                <th scope="col">الدقائق الدولية</th>
+                <th scope="col">المبلغ</th>
+            </tr>
+        </thead>
+            <tbody class="custom-body">
+                @for (item of paginatedData; track $index) {
+                    <tr class="border ">
+                        <td>
+                            <img class=" rounded-circle" src=".\images\insects.jpeg" alt="">
+                            {{item.client}}
+                        </td>
+                        <td>{{item.assignmentDate}}</td>
+                        <td>{{item.cancellationDate}}</td>
+                        <td>{{item.manager}}</td>
+                        <td>{{item.localMinutes}}</td>
+                        <td>{{item.internationalMinutes}}</td>
+                        <td>{{item.amount}} ج.م</td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot></tfoot>
+        </table>
+
+<div class="d-flex justify-content-between align-items-center p-2 shadow-sm bg-white rounded-3 ">
+<div class="main d-flex align-items-center">
+    <span class="mx-2">عرض</span>
+    <select class="main form-select form-select-sm w-auto">
+        <option>10</option>
+        <option>20</option>
+        <option>50</option>
+        <option>100</option>
+    </select>
+    <span class="me-2">من أصل 55</span>
+</div>
+
+    <!-- Pagination -->
+<app-pagination (onClick)="changePage($event)" [totalItems]="data.length" [itemPerPages]="itemPerPages"
+    [currentPage]="currentPage"></app-pagination>
+   
+</div>
+
+        
+</section> 
